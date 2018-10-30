@@ -1,4 +1,4 @@
-# hapi-api
+# te-dashboard-api
 Lean hapi API Boilerplate with an opinionated view on project structure.
 
 ## The Goal
@@ -14,7 +14,7 @@ To provide a base guidance to structure a hapi project with server routes, jwt a
 Clone project and install dependencies:
 ```bash
 $ git clone https://github.com/rjmreis/hapi-api.git
-$ cd hapi-api
+$ cd te-dashboard-api
 $ npm install
 ```
 
