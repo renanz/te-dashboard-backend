@@ -7,7 +7,8 @@ const PerfilSchema = new Schema({
     type: String
   },
   categorias: [String],
-  busquedas: [String]
+  busquedas: [String],
+  inactivo: Boolean
 });
 
 module.exports = mongoose.model("Perfil", PerfilSchema);
