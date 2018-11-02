@@ -23,7 +23,7 @@ module.exports.update = {
             return reply.response({ err: "El nombre ya existe" });
           } else {
             let attributes = {};
-            console.log(req.payload);
+
             if (req.payload.nombre) {
               attributes.nombre = req.payload.nombre;
             }
