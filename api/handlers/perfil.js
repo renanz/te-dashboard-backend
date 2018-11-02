@@ -22,3 +22,32 @@ module.exports.delete = {
     }
   }
 };
+
+module.exports.create = {
+  
+  handler: function (req, reply) {
+    if (!req.payload.nombre) {
+      return reply({ er: 'nombre es requirido' }).code(400);
+    }
+
+    if (!req.payload.categorias) {
+      return reply({ er: 'requiere al menos una categoria' }).code(400);
+    }
+
+    if (!req.payload.busquedas) {
+      return reply({ er: 'requiere al menos una busqueda' }).code(400);
+    }
+
+    Perfil.create({
+      nombre: req.payload.nombre,
+      categorias: req.payload.categorias,
+      busquedas: req.payload.busquedas,
+      inactivo: false
+    }, (err) => {
+      if (err) {
+        return reply(err).code(500);
+      }
+      return reply.response({msg: 'Perfil creado con exito' });
+    });
+  }
+};
