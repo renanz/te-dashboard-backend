@@ -1,11 +1,5 @@
 const Perfil = require('../models/perfiles');
 
-module.exports.notFound = {
-  handler: function(request, reply) {
-    return reply({ result: "Oops, 404 Page!" }).code(404);
-  }
-};
-
 module.exports.update = {
   handler: function(req, reply) {
     if (!req.params.id) {
@@ -22,15 +16,18 @@ module.exports.update = {
     if (req.payload.busquedas) {
       attributes.busquedas = req.payload.busquedas;
     }
+    if (req.payload.inactivo) {
+      attributes.inactivo = req.payload.inactivo;
+    }
     Perfil.findByIdAndUpdate(
       req.params.id,
       attributes,
       { new: true },
-      (err, company) => {
+      (err, perfil) => {
         if (err) {
           return reply(err).code(500);
         }
-        return reply.response(company);
+        return reply.response(perfil);
       }
     );
   }
