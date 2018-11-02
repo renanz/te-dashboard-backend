@@ -1,5 +1,5 @@
 const Home = require('./handlers/home');
-const Perfil = require('./handlers/perfiles');
+const Perfil = require('./handlers/perfil');
 
 exports.register = (plugin, options, next) => {
 
