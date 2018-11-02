@@ -7,6 +7,7 @@ exports.register = (plugin, options, next) => {
     { method: 'GET', path: '/', config: Home.hello },
     { method: 'GET', path: '/restricted', config: Home.restricted },
     { method: 'GET', path: '/{path*}', config: Home.notFound },
+    { method: 'POST', path: '/actualizar-perfil/{id}', config: Perfil.update },
     { method: 'POST', path: '/eliminar-perfil/{id}/{eliminar}', config: Perfil.delete },
     { method: 'POST', path: '/crear-perfil', config: Perfil.create }
   ]);
