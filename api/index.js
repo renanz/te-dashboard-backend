@@ -11,7 +11,8 @@ exports.register = (plugin, options, next) => {
     { method: 'POST', path: '/editar-perfil/{id}', config: Perfil.update },
     { method: 'POST', path: '/eliminar-perfil/{id}/{eliminar}', config: Perfil.delete },
     { method: 'POST', path: '/crear-perfil', config: Perfil.create },
-    { method: 'GET', path: '/listar-categorias', config: Categorias.listar}
+    { method: 'GET', path: '/listar-categorias', config: Categorias.listar},
+    { method: 'GET', path: '/listar-perfiles/{Id}', config: Perfil.mostrarPorID}
   ]);
 
   next();

@@ -122,3 +122,48 @@ module.exports.update = {
     });
   }
 };
+
+
+module.exports.mostrarPorID = {
+  handler: function(req, reply) {
+    if (!req.params.id) {
+      return reply.response({ err: "id es un parámetro requerido" });
+    }
+
+    Perfil.findById(req.params.id, (findByIdErr, perfil) => {
+      if (findByIdErr) {
+        return reply.response({ findByIdErr });
+      }
+
+      if (perfil.inactivo) {
+        return reply.response({ err: "No existe el perfil" });
+      } else {
+        Perfil.find({ nombre: req.payload.nombre }, (findErr) => {
+          if (findErr) {
+            return reply.response({ findErr });
+          }
+          let attributes = {};
+
+          if (req.payload.nombre) {
+            attributes.nombre = req.payload.nombre;
+            attributes.categorias = req.payload.categorias;
+            attributes.busquedas = req.payload.busquedas;
+            attributes.inactivo = req.payload.inactivo;
+          }
+
+          Perfil.mostrar(
+            req.params.id,
+            attributes,
+            (err, perfil) => {
+              if (err) {
+                return reply(err).code(500);
+              }
+
+              return reply.response(perfil);
+            }
+          );
+        });
+      }
+    });
+  }
+};
