@@ -1,4 +1,4 @@
-var categorias = ["business","entertainment","general","health", "science", "sports", "technology"];
+const categorias = ["business","entertainment","general","health", "science", "sports", "technology"];
 
 module.exports.listar = {
   handler: function (req, reply) {
