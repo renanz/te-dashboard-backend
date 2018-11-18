@@ -123,7 +123,7 @@ module.exports.update = {
   }
 };
 
-module.exports.mostrarPorID = {
+module.exports.showforId = {
   handler: function(req, reply) {
     if (!req.params.id) {
       return reply.response({ err: "id es un parámetro requerido" });
@@ -150,7 +150,7 @@ module.exports.mostrarPorID = {
             attributes.inactivo = req.payload.inactivo;
           }
 
-          Perfil.mostrar(
+          Perfil.show(
             req.params.id,
             attributes,
             (err, perfil) => {
