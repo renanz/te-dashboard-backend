@@ -123,7 +123,6 @@ module.exports.update = {
   }
 };
 
-
 module.exports.mostrarPorID = {
   handler: function(req, reply) {
     if (!req.params.id) {
