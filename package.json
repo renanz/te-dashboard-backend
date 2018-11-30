@@ -8,6 +8,7 @@
   },
   "main": "server.js",
   "scripts": {
+    "init": "npm install",
     "test": "./node_modules/lab/bin/lab -v",
     "start": "npm-run-all --parallel lint start:server",
     "start:server": "nodemon server.js",
