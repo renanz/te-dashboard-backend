@@ -13,8 +13,8 @@ const bucketName = 'rene-ccc504-backend';
 const zipName = 'te-dashboard-backend.zip';
 
 AWS.config.update({
-  accessKeyId: 'AKIAIVEZ53HRLADNUHSA',
-  secretAccessKey: '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'
+  accessKeyId: '',
+  secretAccessKey: ''
 });
 
 gulp.task('copy_api_folder', () => {
