@@ -1,3 +1,2 @@
 #!/bin/ah
-set -eo pipefail
-gulp prepare-backend
+gulp prepare_backend

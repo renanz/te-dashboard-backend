@@ -6,6 +6,6 @@ before_script:
 script: npm run test
 deploy:
   provider: script
-  script: ./deploy.sh
+  script: sh $TRAVIS_BUILD_DIR/deploy.sh
   on:
     branch: develop
