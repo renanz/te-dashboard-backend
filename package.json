@@ -26,6 +26,7 @@
     "boilerplate"
   ],
   "dependencies": {
+    "blipp": "^2.3.0",
     "glue": "^4.1.0",
     "good": "^7.2.0",
     "good-console": "^6.4.0",
@@ -36,13 +37,18 @@
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "blipp": "^2.3.0",
+    "aws-sdk": "^2.368.0",
     "code": "^4.1.0",
+    "del": "^3.0.0",
     "eslint": "^4.1.1",
     "eslint-plugin-import": "^2.6.1",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "gulp-zip": "^4.2.0",
     "lab": "^14.1.0",
     "nodemon": "^1.11.0",
-    "npm-run-all": "^4.0.2"
+    "npm-run-all": "^4.0.2",
+    "run-sequence": "^2.2.1"
   },
   "engines": {
     "node": ">=4.0.0"

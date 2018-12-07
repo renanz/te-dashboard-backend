@@ -4,7 +4,7 @@ const envKey = key => {
   const configuration = {
     development: {
       host: 'localhost',
-      port: 8000
+      port: 8081
     },
     uat: {
       host: 'localhost',
